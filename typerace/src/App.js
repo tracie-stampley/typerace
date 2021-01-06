@@ -1,15 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import Button from './Button';
 
 function App() {
+  const buttonTextItems = ['Click Me!', 'No Me!', 'Please no clicky']
   return (
     <div>
       <h2>Type Race</h2>
       <input />
       <hr/>
-      <button>Click Me!</button>
-      <button>No Me!</button>
-      <button>Please no clicky</button>
+      {buttonTextItems.map(textItem => <Button buttonText={textItem} />)}
     </div>
   );
 }
