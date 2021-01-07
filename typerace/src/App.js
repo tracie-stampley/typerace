@@ -7,6 +7,7 @@ const buttonTextItems = ['Bears, beets, battlestar galactica', "What's Forrest G
 class App extends React.Component {
   constructor (props) {
     super(props);
+    this.inputRef = React.createRef();
     this.state = {
       userText: ''
     };
@@ -22,6 +23,7 @@ class App extends React.Component {
 
   chooseSnippet = index => {
     this.setState({ snippet: buttonTextItems[index], startTime: new Date().getTime()});
+    this.inputRef.current.focus();
   };
 
   render () {
@@ -31,7 +33,7 @@ class App extends React.Component {
         {this.state.snippet}
         <h4>{this.state.victory ? `Done! Woot! Time: ${this.state.endTime}ms` : null}</h4>
         <hr/>
-        <input value={this.state.userText} onChange={this.updateUserText} />
+        <input ref={this.inputRef} value={this.state.userText} onChange={this.updateUserText} />
         <hr/>
         {buttonTextItems.map((textItem, index) => <Button onClick={(e) => this.chooseSnippet(index, e)} buttonText={textItem} />)}
       </div>
