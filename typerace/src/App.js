@@ -33,7 +33,7 @@ class App extends React.Component {
         <hr/>
         <input value={this.state.userText} onChange={this.updateUserText} />
         <hr/>
-        {buttonTextItems.map((textItem, index) => <Button onClick={(e) => this.chooseSnippet(index, e)} buttonText={textItem} />)}
+        {buttonTextItems.map((textItem, index) => <Button key={index} onClick={() => this.chooseSnippet(index)} buttonText={textItem} />)}
       </div>
     );
   };
