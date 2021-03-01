@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Button from './Button';
+import TextButton from './TextButton';
 
 const buttonTextItems = ['Bears, beets, battlestar galactica', "What's Forrest Gump's password? 1Forrest1", 'Where do programmers like to hangout? The Foo Bar'];
 
@@ -35,7 +35,7 @@ class App extends React.Component {
         <hr/>
         <input ref={this.inputRef} value={this.state.userText} onChange={this.updateUserText} />
         <hr/>
-        {buttonTextItems.map((textItem, index) => <Button onClick={(e) => this.chooseSnippet(index, e)} buttonText={textItem} />)}
+        {buttonTextItems.map((textItem, index) => <TextButton onClick={(e) => this.chooseSnippet(index, e)} buttonText={textItem} />)}
       </div>
     );
   };
