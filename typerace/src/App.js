@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import Button from './Button';
+import TextButton from './TextButton';
 
 function App() {
   const buttonTextItems = ['Click Me!', 'No Me!', 'Please no clicky']
@@ -9,7 +8,7 @@ function App() {
       <h2>Type Race</h2>
       <input />
       <hr/>
-      {buttonTextItems.map(textItem => <Button buttonText={textItem} />)}
+      {buttonTextItems.map(textItem => <TextButton buttonText={textItem} />)}
     </div>
   );
 }
